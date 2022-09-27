@@ -12,6 +12,7 @@ public class inclass919 {
 
         System.out.println(a[5]);
 
+
         int m = Integer.parseInt(args[0]);
         int n = Integer.parseInt(args[1]);
         int bombs = Integer.parseInt(args[2]);

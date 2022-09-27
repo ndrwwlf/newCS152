@@ -36,23 +36,53 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "configurable.group.tools"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.WorldMap">
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
     </configuration>
+    <configuration name="Checkerboard" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Checkerboard" />
+      <module name="io-Wk4" />
+      <option name="PROGRAM_PARAMETERS" value="8" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SHTakeTwo" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="SHTakeTwo" />
+      <module name="io-Wk4" />
+      <option name="PROGRAM_PARAMETERS" value="2 &lt; ../io/biased-coin.txt" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SHThree" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="SHThree" />
+      <module name="io-Wk4" />
+      <option name="PROGRAM_PARAMETERS" value="6 &lt; ../io/loaded-die.txt" />
+      <method v="2" />
+    </configuration>
     <configuration name="ShannonEntropy" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="ShannonEntropy" />
       <module name="io-Wk4" />
-      <option name="PROGRAM_PARAMETERS" value="5 1 1 2" />
+      <option name="PROGRAM_PARAMETERS" value="2" />
+      <method v="2" />
+    </configuration>
+    <configuration name="WorldMap" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="WorldMap" />
+      <module name="io-Wk4" />
+      <option name="PROGRAM_PARAMETERS" value="&lt; ../io/usa/usa.txt" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="inclassSep26" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="inclassSep26" />
+      <module name="io-Wk4" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -68,9 +98,24 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ShannonEntropy.java</url>
-          <line>8</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/SHTakeTwo.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SHTakeTwo.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Checkerboard.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SHThree.java</url>
+          <line>5</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
