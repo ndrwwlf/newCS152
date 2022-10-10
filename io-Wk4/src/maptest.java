@@ -1,6 +1,6 @@
 public class maptest {
     public static void main(String[] args) {
-        
+
         int width = StdIn.readInt();
         int height = StdIn.readInt();
 

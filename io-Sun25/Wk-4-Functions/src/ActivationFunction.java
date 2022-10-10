@@ -2,12 +2,12 @@ public class ActivationFunction {
     public static void main(String[] args) {
 
         double x = Double.parseDouble(args[0]);
-        
-        StdOut.println(heaviside(x));
-        StdOut.println(sigmoid(x));
-        StdOut.println(tanh(x));
-        StdOut.println(softsign(x));
-        StdOut.println(sqnl(x));
+
+        StdOut.println("heaviside(" + x + ") = " + heaviside(x));
+        StdOut.println("sigmoid(" + x + ") = " + sigmoid(x));
+        StdOut.println("tanh(" + x + ") = " + tanh(x));
+        StdOut.println("softsign(" + x + ") = " + softsign(x));
+        StdOut.println("sqnl(" + x + ") = " + sqnl(x));
     }
 
     public static double heaviside(double x) {
@@ -16,7 +16,6 @@ public class ActivationFunction {
 
             return Double.NaN;
         }
-
         if (x < 0) {
 
             return 0;
@@ -41,6 +40,19 @@ public class ActivationFunction {
 
     public static double tanh(double x) {
 
+        if (x == Double.POSITIVE_INFINITY) {
+
+            return 1.0;
+        }
+        if (x == Double.NEGATIVE_INFINITY) {
+            return -1.0;
+        }
+        if (x == Double.MAX_VALUE) {
+            return 1.0;
+        }
+        if (x == -Double.MAX_VALUE) {
+            return -1;
+        }
         if (Double.isNaN(x)) {
 
             return Double.NaN;
@@ -52,6 +64,12 @@ public class ActivationFunction {
 
     public static double softsign(double x) {
 
+        if (x == Double.POSITIVE_INFINITY) {
+            return 1.0;
+        }
+        if (x == Double.NEGATIVE_INFINITY) {
+            return -1.0;
+        }
         if (Double.isNaN(x)) {
 
             return Double.NaN;

@@ -1,14 +1,14 @@
 public class Divisors {
     public static void main(String[] args) {
-
+        
         int a = Integer.parseInt(args[0]);
         int b = Integer.parseInt(args[1]);
 
-        StdOut.println(gcd(a, b));
-        StdOut.println(lcm(a, b));
-        StdOut.println(areRelativelyPrime(a, b));
-        StdOut.println(totient(a));
-        StdOut.println(totient(b));
+        StdOut.println(String.format("gcd(%s, %s) = %s", a, b, gcd(a, b)));
+        StdOut.println(String.format("lcm(%s, %s) = %s", a, b, lcm(a, b)));
+        StdOut.println(String.format("areRelativelyPrime(%s, %s) = %s", a, b, areRelativelyPrime(a, b)));
+        StdOut.println(String.format("totient(%s) = %s", a, totient(a)));
+        StdOut.println(String.format("totient(%s) = %s", b, totient(b)));
     }
 
     // Returns the greatest common divisor of a and b.
@@ -37,9 +37,13 @@ public class Divisors {
     // Returns the least common multiple of a and b.
     public static int lcm(int a, int b) {
 
+        if (a == 0 && b == 0) {
+
+            return 0;
+        }
         int gCDAB = gcd(a, b);
 
-        return Math.abs(a) * Math.abs(b) / gCDAB;
+        return Math.abs(a) / gCDAB * Math.abs(b);
     }
 
     // Returns true if a and b are relatively prime; false otherwise.
@@ -51,6 +55,11 @@ public class Divisors {
     // Returns the number of integers between 1 and n that are
     // relatively prime with n.
     public static int totient(int n) {
+
+        if (n == 1) {
+
+            return 1;
+        }
 
         int count = 0;
 
