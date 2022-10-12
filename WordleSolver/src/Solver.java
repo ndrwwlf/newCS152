@@ -10,7 +10,6 @@ public class Solver {
     @SuppressFBWarnings({"DLS_DEAD_LOCAL_STORE", "RV_RETURN_VALUE_IGNORED_NO_SIDE_EFFECT"})
     public static void main(String[] args) throws IOException {
 
-
         String e = "blane";
         String ee = "blaee";
         long eInt = e.chars().filter(ch -> ch == 'e').count();
@@ -78,7 +77,7 @@ public class Solver {
             for (Character ch : word.toCharArray()) {
                 int count = 0;
                 if (letterMap.containsKey(ch)) {
-                    count = letterMap.get(ch);
+                    count += letterMap.get(ch);
                     count++;
                     letterMap.replace(ch, count);
                 } else {
@@ -92,7 +91,10 @@ public class Solver {
 
 //            if (word.contains("e")) count += 1233;
 //            if (word.contains("e")) count += word.chars().filter(ch -> ch == 'e').count() * 1233;
-            if (word.length() - word.replace("e", "").length() > 0) count += 1233;
+            if (word.length() - word.replace("e", "").length() > 0) count += 1233 * (letterMap.get('e') + 1);
+//            if ((word.length() - word.replace("e", "").length()) > 0)
+//                count += 1233 * (word.length() - word.replace("e", "").length());
+//            if (word.length() - word.replace("e", "").length() > 0) count += 1233;
 //            if (word.contains("a")) count += word.chars().filter(ch -> ch == 'a').count() * 979;
 //            if (word.contains("r")) count += word.chars().filter(ch -> ch == 'r').count() * 899;
 //            if (word.contains("o")) count += word.chars().filter(ch -> ch == 'o').count() * 754;
@@ -170,6 +172,56 @@ public class Solver {
             if (word.length() - word.replace("x", "").length() > 0) count += 37 * (letterMap.get('x') + 1);
             if (word.length() - word.replace("q", "").length() > 0) count += 29 * (letterMap.get('q') + 1);
             if (word.length() - word.replace("j", "").length() > 0) count += 27 * (letterMap.get('j') + 1);
+//            if (word.length() - word.replace("a", "").length() > 0)
+//                count += 979 * (word.length() - word.replace("a", "").length());
+//            if (word.length() - word.replace("r", "").length() > 0)
+//                count += 899 * (word.length() - word.replace("r", "").length());
+//            if (word.length() - word.replace("o", "").length() > 0)
+//                count += 754 * (word.length() - word.replace("o", "").length());
+//            if (word.length() - word.replace("t", "").length() > 0)
+//                count += 729 * (word.length() - word.replace("t", "").length());
+//            if (word.length() - word.replace("l", "").length() > 0)
+//                count += 719 * (word.length() - word.replace("l", "").length());
+//            if (word.length() - word.replace("i", "").length() > 0)
+//                count += 671 * (word.length() - word.replace("i", "").length());
+//            if (word.length() - word.replace("s", "").length() > 0)
+//                count += 669 * (word.length() - word.replace("s", "").length());
+//            if (word.length() - word.replace("n", "").length() > 0)
+//                count += 575 * (word.length() - word.replace("n", "").length());
+//            if (word.length() - word.replace("c", "").length() > 0)
+//                count += 477 * (word.length() - word.replace("c", "").length());
+//            if (word.length() - word.replace("u", "").length() > 0)
+//                count += 467 * (word.length() - word.replace("u", "").length());
+//            if (word.length() - word.replace("y", "").length() > 0)
+//                count += 425 * (word.length() - word.replace("y", "").length());
+//            if (word.length() - word.replace("d", "").length() > 0)
+//                count += 393 * (word.length() - word.replace("d", "").length());
+//            if (word.length() - word.replace("h", "").length() > 0)
+//                count += 389 * (word.length() - word.replace("h", "").length());
+//            if (word.length() - word.replace("p", "").length() > 0)
+//                count += 367 * (word.length() - word.replace("p", "").length());
+//            if (word.length() - word.replace("m", "").length() > 0)
+//                count += 316 * (word.length() - word.replace("m", "").length());
+//            if (word.length() - word.replace("g", "").length() > 0)
+//                count += 311 * (word.length() - word.replace("g", "").length());
+//            if (word.length() - word.replace("b", "").length() > 0)
+//                count += 281 * (word.length() - word.replace("b", "").length());
+//            if (word.length() - word.replace("f", "").length() > 0)
+//                count += 230 * (word.length() - word.replace("f", "").length());
+//            if (word.length() - word.replace("k", "").length() > 0)
+//                count += 210 * (word.length() - word.replace("k", "").length());
+//            if (word.length() - word.replace("w", "").length() > 0)
+//                count += 195 * (word.length() - word.replace("w", "").length());
+//            if (word.length() - word.replace("v", "").length() > 0)
+//                count += 153 * (word.length() - word.replace("v", "").length());
+//            if (word.length() - word.replace("z", "").length() > 0)
+//                count += 40 * (word.length() - word.replace("z", "").length());
+//            if (word.length() - word.replace("x", "").length() > 0)
+//                count += 37 * (word.length() - word.replace("x", "").length());
+//            if (word.length() - word.replace("q", "").length() > 0)
+//                count += 29 * (word.length() - word.replace("q", "").length());
+//            if (word.length() - word.replace("j", "").length() > 0)
+//                count += 27 * (word.length() - word.replace("j", "").length());
 
             wordRankMap.put(word, count);
         }
@@ -336,6 +388,9 @@ public class Solver {
         wordMap.replace("latin", -1);
         wordMap.replace("mungy", -1);
         wordMap.replace("bumpf", -1);
+        wordMap.replace("oring", -1);
+        wordMap.replace("ioctl", -1);
+        wordMap.replace("unarc", -1);
         return wordMap;
     }
 
@@ -346,29 +401,36 @@ public class Solver {
         HashMap<Character, String> wordMap = new HashMap<>();
 
         String[][] wordArr = new String[5][1];
+        StdOut.println("What colors are the letters?");
+        String input = sc.next();
 
-        StdOut.println("What color was first letter?");
-        String first = sc.next();
+//        StdOut.println("What color was first letter?");
+//        String first = sc.next();
+        String first = String.valueOf(input.charAt(0));
         wordArr[0][0] = thisGuess.charAt(0) + first;
         wordMap.put(thisGuess.charAt(0), first);
 
-        StdOut.println("What color was second letter?");
-        String second = sc.next();
+//        StdOut.println("What color was second letter?");
+//        String second = sc.next();
+        String second = String.valueOf(input.charAt(1));
         wordArr[1][0] = String.valueOf(thisGuess.charAt(1)) + second;
         wordMap.put(thisGuess.charAt(1), second);
 
-        StdOut.println("What color was third letter?");
-        String third = sc.next();
+//        StdOut.println("What color was third letter?");
+//        String third = sc.next();
+        String third = String.valueOf(input.charAt(2));
         wordArr[2][0] = String.valueOf(thisGuess.charAt(2)) + third;
         wordMap.put(thisGuess.charAt(2), third);
 
-        StdOut.println("What color was fourth letter?");
-        String fourth = sc.next();
+//        StdOut.println("What color was fourth letter?");
+//        String fourth = sc.next();
+        String fourth = String.valueOf(input.charAt(3));
         wordArr[3][0] = String.valueOf(thisGuess.charAt(3)) + fourth;
         wordMap.put(thisGuess.charAt(3), fourth);
 
-        StdOut.println("What color was fifth letter?");
-        String fifth = sc.next();
+//        StdOut.println("What color was fifth letter?");
+//        String fifth = sc.next();
+        String fifth = String.valueOf(input.charAt(4));
         wordArr[4][0] = String.valueOf(thisGuess.charAt(4)) + fifth;
         wordMap.put(thisGuess.charAt(4), fifth);
 
